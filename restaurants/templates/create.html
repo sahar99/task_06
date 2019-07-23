@@ -4,7 +4,12 @@
         <meta charset="utf-8">
         <title>Create</title>
     </head>
-    <body>
+    <body> <!--action="{% url 'restaurant-create' %}"-->
+        <form  method="POST">
+            {% csrf_token %}
+            {{ create_form.as_p }} <!--as_p = just to format each attr. in new line -->
+            <input type="submit" value="Create/Add"/> 
+        </form>
         
     </body>
 </html>
